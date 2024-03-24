@@ -15,3 +15,77 @@ header {
     0px 6.39px 10.02px 0px rgba(169, 80, 196, 0.039),
     0px 2.31px 3.62px 0px rgba(169, 80, 196, 0.027);
 }
+
+.navbar-desktop {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 10px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.navbar-desktop-item-1,
+.navbar-desktop-item-2 {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-desktop {
+  list-style: none;
+  display: flex;
+
+  .menu-item {
+    margin-left: 16px;
+  }
+}
+
+.nav-link-desktop {
+  padding: 12px 16px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 42%;
+    right: -3px;
+
+    border-bottom: 2px solid $primary;
+    border-right: 2px solid $primary;
+    border-radius: 1px;
+
+    transform: rotate(45deg);
+    transition: 0.2s linear;
+  }
+
+  &:hover {
+    &::after {
+      top: 45%;
+    }
+  }
+}
+
+.navbar-mobile,
+.menu-mobile {
+  display: none;
+
+  @include responsive(s) {
+    display: block;
+  }
+}
